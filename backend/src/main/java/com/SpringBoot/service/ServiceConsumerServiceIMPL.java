@@ -7,11 +7,15 @@ import org.springframework.boot.autoconfigure.batch.BatchProperties;
 import org.springframework.stereotype.Service;
 import com.SpringBoot.entities.Services;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 
 @Service
 public class ServiceConsumerServiceIMPL implements ServiceConsumerService{
     @Autowired
     ServiceConsumerRepository serviceConsumerRepository;
+    @Autowired
+    ServicesService servicesService;
     @Override
     public ServiceConsumer register(ServiceConsumer serviceConsumer) throws Exception {
         ServiceConsumer obj = serviceConsumerRepository.findByEmail(serviceConsumer.getEmail());
@@ -34,5 +38,33 @@ public class ServiceConsumerServiceIMPL implements ServiceConsumerService{
 
             return obj;
         }
+
+    @Override
+    public void selectPrefferedService(UUID scId, UUID id) {
+        Services tempService=servicesService.getServiceById(id);
+        System.out.println("This is here");
+        if(getServiceConsumer(scId).getServicesList()==null) {
+            System.out.println(getServiceConsumer(scId).getServicesList());
+            getServiceConsumer(scId).setServicesList(new ArrayList<Services>());
+            System.out.println("is it working");
+        }
+        getServiceConsumer(scId).getServicesList().add(tempService);
+        ServiceConsumer tempServiceConsumer = getServiceConsumer(scId);
+//		System.out.println(tempJobSeeker);
+        if(servicesService.getServiceById(id).getServiceConsumerList() == null) {
+            servicesService.getServiceById(id).setServiceConsumerList(new ArrayList<ServiceConsumer>());
+            System.out.println("working");
+        }
+        List<ServiceConsumer> tempServiceConsumerList = servicesService.getServiceById(id).getServiceConsumerList();
+        tempServiceConsumerList.add(tempServiceConsumer);
+        servicesService.getServiceById(id).setServiceConsumerList(tempServiceConsumerList);
+        tempServiceConsumer.setServicesList(getServiceConsumer(scId).getServicesList());
+        serviceConsumerRepository.saveAndFlush(tempServiceConsumer);
     }
+
+    @Override
+    public ServiceConsumer getServiceConsumer(UUID id) {
+        return serviceConsumerRepository.findById(id).orElse(null);
+    }
+}
 

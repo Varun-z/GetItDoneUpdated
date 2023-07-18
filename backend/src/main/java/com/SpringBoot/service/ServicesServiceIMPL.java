@@ -30,4 +30,9 @@ public class ServicesServiceIMPL implements ServicesService{
         serviceProviderService.findRecruiter(id).setServicesList(tempJobList);
         return obj;
     }
+
+    @Override
+    public Services getServiceById(UUID id) {
+        return servicesRepository.findById(id).orElse(null);
+    }
 }

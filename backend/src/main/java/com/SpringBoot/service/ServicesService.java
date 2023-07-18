@@ -9,4 +9,6 @@ public interface ServicesService {
     List<Services> getServices();
 
     Services saveService(UUID id, Services services);
+
+    Services getServiceById(UUID id);
 }

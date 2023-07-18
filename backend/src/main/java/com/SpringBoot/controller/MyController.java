@@ -48,4 +48,12 @@ public class MyController {
     public ServiceConsumer login(@RequestBody ServiceConsumer serviceConsumer) throws Exception {
         return serviceConsumerService.login(serviceConsumer);
     }
+    @GetMapping("/{SCid}/selectService/{serviceId}")
+    public void selectService(@PathVariable("serviceId") UUID id,@PathVariable("SCid") UUID SCId) {
+        serviceConsumerService.selectPrefferedService(SCId,id);
+    }
+    @GetMapping("fetchServiceConsumer/{SCid}")
+    public ServiceConsumer getConsumer(@PathVariable("SCid") UUID id) {
+        return serviceConsumerService.getServiceConsumer(id);
+    }
 }
