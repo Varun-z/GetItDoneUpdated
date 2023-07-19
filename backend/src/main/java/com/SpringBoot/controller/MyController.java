@@ -1,5 +1,6 @@
 package com.SpringBoot.controller;
 
+import com.SpringBoot.DTO.ServiceConsumerDTO;
 import com.SpringBoot.entities.ServiceConsumer;
 import com.SpringBoot.entities.ServiceProvider;
 import com.SpringBoot.entities.Services;
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class MyController {
     @Autowired
     ServiceConsumerService serviceConsumerService;
@@ -22,6 +24,8 @@ public class MyController {
 
     @Autowired
     ServiceProviderService serviceProviderService;
+    @Autowired
+    ServiceConsumerDTO serviceConsumerDTO;
 
     @GetMapping("/")
     public List<Services> getAllServices(){
