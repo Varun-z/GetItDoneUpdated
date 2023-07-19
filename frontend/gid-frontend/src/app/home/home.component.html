@@ -1,5 +1,19 @@
-<h2>Welcome to our website</h2>
-<p>Register as:</p>
-<button routerLink="/register/consumer">Consumer</button>
-<button routerLink="/register/service-provider">Service Provider</button>
 
+<nav class="navbar">
+    <h2>Welcome to our website</h2>
+    <div class="dropdown">
+      <button class="dropbtn">Register</button>
+      <div class="dropdown-content">
+        <a routerLink="/register/consumer">Consumer</a>
+        <a routerLink="/register/provider">Service Provider</a>
+      </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">login</button>
+        <div class="dropdown-content">
+          <a routerLink="/login/consumer">Consumer</a>
+          <a routerLink="/login/provider">Service Provider</a>
+        </div>
+      </div>
+  </nav>
+  

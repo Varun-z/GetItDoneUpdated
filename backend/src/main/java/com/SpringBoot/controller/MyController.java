@@ -24,8 +24,6 @@ public class MyController {
 
     @Autowired
     ServiceProviderService serviceProviderService;
-    @Autowired
-    ServiceConsumerDTO serviceConsumerDTO;
 
     @GetMapping("/")
     public List<Services> getAllServices(){
