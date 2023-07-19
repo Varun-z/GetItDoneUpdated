@@ -1,4 +1,4 @@
-/* Basic styling for the consumer register form container */
+/* Basic styling for the login form container */
 form {
     max-width: 400px;
     margin: 0 auto;
@@ -8,7 +8,7 @@ form {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
   
-  /* Styling for the register heading */
+  /* Styling for the login heading */
   h2 {
     font-size: 24px;
     text-align: center;
@@ -34,18 +34,17 @@ form {
     font-size: 16px;
   }
   
-  /* Styling for the register button */
+  /* Styling for the login button */
   button[type="submit"] {
     background-color: #4CAF50;
     color: white;
-    padding: 20px 20px; /* Increase padding for a slightly larger button */
-    font-size: 18px; /* Increase font size for a more prominent button text */
+    padding: 10px 20px;
+    font-size: 16px;
     border: none;
-    border-radius: 5px; /* Increase border-radius for rounded corners */
+    border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow to the button */
   }
   
   button[type="submit"]:hover {
@@ -65,4 +64,5 @@ form {
     font-size: 14px;
     margin-top: -10px;
   }
+ 
   
