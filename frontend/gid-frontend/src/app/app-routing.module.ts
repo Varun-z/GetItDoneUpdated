@@ -5,13 +5,15 @@ import { HomeComponent } from './home/home.component';
 import { ConsumerLoginComponent } from './consumer-login/consumer-login.component';
 import { ProviderRegisterComponent } from './provider-register/provider-register.component';
 import { ProviderLoginComponent } from './provider-login/provider-login.component';
+import { PostServiceComponent } from './post-service/post-service.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'register/consumer', component: ConsumerRegisterComponent },
   { path: 'login/consumer', component: ConsumerLoginComponent },
   { path: 'register/provider', component: ProviderRegisterComponent },
-  { path: 'login/provider', component: ProviderLoginComponent }
+  { path: 'login/provider', component: ProviderLoginComponent },
+  {path: 'post-service/:SPid', component: PostServiceComponent },
 ];
 
 @NgModule({
