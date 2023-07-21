@@ -30,7 +30,7 @@ public class MyController {
         return servicesService.getServices();
     }
     @PostMapping("/addService/{SPid}")
-    public Services addService(@PathVariable("SPid") UUID id, @RequestBody Services services) {
+    public Services addService(@PathVariable("SPid") int id, @RequestBody Services services) {
         return servicesService.saveService(id,services);
     }
     @PostMapping("/registerServiceProvider")
@@ -51,11 +51,11 @@ public class MyController {
         return serviceConsumerService.login(serviceConsumer);
     }
     @GetMapping("/{SCid}/selectService/{serviceId}")
-    public void selectService(@PathVariable("serviceId") UUID id,@PathVariable("SCid") UUID SCId) {
+    public void selectService(@PathVariable("serviceId") int id,@PathVariable("SCid") int SCId) {
         serviceConsumerService.selectPrefferedService(SCId,id);
     }
     @GetMapping("fetchServiceConsumer/{SCid}")
-    public ServiceConsumer getConsumer(@PathVariable("SCid") UUID id) {
+    public ServiceConsumer getConsumer(@PathVariable("SCid") int id) {
         return serviceConsumerService.getServiceConsumer(id);
     }
 }

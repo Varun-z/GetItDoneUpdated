@@ -40,29 +40,42 @@ public class ServiceConsumerServiceIMPL implements ServiceConsumerService{
         }
 
     @Override
-    public void selectPrefferedService(UUID scId, UUID id) {
-        Services tempService=servicesService.getServiceById(id);
-        System.out.println("This is here");
-        if(getServiceConsumer(scId).getServicesList()==null) {
-            System.out.println(getServiceConsumer(scId).getServicesList());
-            getServiceConsumer(scId).setServicesList(new ArrayList<Services>());
-            System.out.println("is it working");
-        }
-        getServiceConsumer(scId).getServicesList().add(tempService);
+    public void selectPrefferedService(int scId, int id) {
+//        Services tempService=servicesService.getServiceById(id);
+//        System.out.println("This is here");
+//        if(getServiceConsumer(scId).getServicesList()==null) {
+//            System.out.println(getServiceConsumer(scId).getServicesList());
+//            getServiceConsumer(scId).setServicesList(new ArrayList<Services>());
+//            System.out.println("is it working");
+//        }
+//        getServiceConsumer(scId).getServicesList().add(tempService);
+//        ServiceConsumer tempServiceConsumer = getServiceConsumer(scId);
+//        if(servicesService.getServiceById(id).getServiceConsumerList() == null) {
+//            servicesService.getServiceById(id).setServiceConsumerList(new ArrayList<ServiceConsumer>());
+//            System.out.println("working");
+//        }
+//        List<ServiceConsumer> tempServiceConsumerList = servicesService.getServiceById(id).getServiceConsumerList();
+//        tempServiceConsumerList.add(tempServiceConsumer);
+//        servicesService.getServiceById(id).setServiceConsumerList(tempServiceConsumerList);
+//        tempServiceConsumer.setServicesList(getServiceConsumer(scId).getServicesList());
+//        serviceConsumerRepository.saveAndFlush(tempServiceConsumer);
         ServiceConsumer tempServiceConsumer = getServiceConsumer(scId);
-        if(servicesService.getServiceById(id).getServiceConsumerList() == null) {
-            servicesService.getServiceById(id).setServiceConsumerList(new ArrayList<ServiceConsumer>());
-            System.out.println("working");
+        Services tempService = servicesService.getServiceById(id);
+
+        if (tempServiceConsumer.getServicesList() == null) {
+            tempServiceConsumer.setServicesList(new ArrayList<Services>());
         }
-        List<ServiceConsumer> tempServiceConsumerList = servicesService.getServiceById(id).getServiceConsumerList();
-        tempServiceConsumerList.add(tempServiceConsumer);
-        servicesService.getServiceById(id).setServiceConsumerList(tempServiceConsumerList);
-        tempServiceConsumer.setServicesList(getServiceConsumer(scId).getServicesList());
-        serviceConsumerRepository.saveAndFlush(tempServiceConsumer);
+
+        tempServiceConsumer.getServicesList().add(tempService);
+        tempService.getServiceConsumerList().add(tempServiceConsumer);
+
+        // Save the updated entities
+        serviceConsumerRepository.save(tempServiceConsumer);
+        servicesService.saveService(tempService.getServiceProvider().getId(), tempService);
     }
 
     @Override
-    public ServiceConsumer getServiceConsumer(UUID id) {
+    public ServiceConsumer getServiceConsumer(int id) {
         return serviceConsumerRepository.findById(id).orElse(null);
     }
 }

@@ -11,6 +11,8 @@ import { ConsumerLoginComponent } from './consumer-login/consumer-login.componen
 import { ProviderRegisterComponent } from './provider-register/provider-register.component';
 import { ProviderLoginComponent } from './provider-login/provider-login.component';
 import { PostServiceComponent } from './post-service/post-service.component';
+import { ServiceListComponent } from './service-list/service-list.component';
+import { ServiceDetailComponent } from './service-detail/service-detail.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { PostServiceComponent } from './post-service/post-service.component';
     ConsumerLoginComponent,
     ProviderRegisterComponent,
     ProviderLoginComponent,
-    PostServiceComponent
+    PostServiceComponent,
+    ServiceListComponent,
+    ServiceDetailComponent
   ],
   imports: [
     BrowserModule,

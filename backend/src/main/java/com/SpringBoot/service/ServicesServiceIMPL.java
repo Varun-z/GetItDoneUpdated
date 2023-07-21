@@ -22,7 +22,7 @@ public class ServicesServiceIMPL implements ServicesService{
     }
 
     @Override
-    public Services saveService(UUID id, Services services) {
+    public Services saveService(int id, Services services) {
         services.setServiceProvider(serviceProviderService.findRecruiter(id));
         Services obj = servicesRepository.save(services);
         List<Services> tempJobList = serviceProviderService.findRecruiter(id).getServicesList();
@@ -32,7 +32,7 @@ public class ServicesServiceIMPL implements ServicesService{
     }
 
     @Override
-    public Services getServiceById(UUID id) {
+    public Services getServiceById(int id) {
         return servicesRepository.findById(id).orElse(null);
     }
 }

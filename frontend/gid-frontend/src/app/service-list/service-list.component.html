@@ -1,0 +1,9 @@
+<h2>Service List</h2>
+<ul>
+  <li *ngFor="let service of services">
+    <a (click)="onSelectService(service.id)">
+      {{ service.title }}
+    </a>
+  </li>
+</ul>
+
