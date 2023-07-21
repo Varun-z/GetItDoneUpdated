@@ -1,0 +1,49 @@
+/* post-service.component.css */
+
+/* Styling for the <h2> element */
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for the form container */
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  /* Styling for the labels */
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  /* Styling for the input fields */
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Styling for the submit button */
+  button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Optional: Adding some spacing for the form container */
+  form {
+    margin-top: 20px;
+  }
+  

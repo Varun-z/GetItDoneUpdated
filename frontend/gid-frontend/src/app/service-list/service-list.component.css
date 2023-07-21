@@ -1,0 +1,30 @@
+/* Add this CSS to your styles.css or styles.scss file */
+
+/* Reset the default list style */
+ul {
+    list-style: none;
+    padding: 0;
+    
+  }
+  
+  /* Style each service item as a button */
+  li {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 15px;
+    border: 1px solid #141313;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Change the background color on hover */
+  li:hover {
+    background-color: #2fdb3b;
+  }
+  
+  /* If you want to remove underlines from the links */
+  li a {
+    text-decoration: none;
+  }
+  
