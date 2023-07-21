@@ -8,7 +8,7 @@ import java.util.UUID;
 public interface ServicesService {
     List<Services> getServices();
 
-    Services saveService(UUID id, Services services);
+    Services saveService(int id, Services services);
 
-    Services getServiceById(UUID id);
+    Services getServiceById(int id);
 }

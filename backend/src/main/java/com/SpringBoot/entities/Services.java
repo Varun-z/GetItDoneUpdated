@@ -14,8 +14,8 @@ import java.util.UUID;
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Services {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
     private String title;
     @ManyToOne
     private ServiceProvider serviceProvider;

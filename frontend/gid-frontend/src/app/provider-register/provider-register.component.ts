@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-provider-register',
@@ -12,12 +13,13 @@ export class ProviderRegisterComponent {
     email: '',
     password: ''
   };
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
   registerProvider() {
     this.http.post<any>('http://localhost:8080/registerServiceProvider', this.provider)
       .subscribe({
         next: (response) => {
           console.log('Provider registered successfully:', response);
+          this.router.navigate(['/login/provider']);
           // Handle success: show success message, redirect, etc.
         },
         error: (error) => {

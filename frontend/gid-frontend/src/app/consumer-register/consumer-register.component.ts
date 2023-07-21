@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 // interface ServiceConsumer {
 //   name: string;
@@ -19,13 +20,14 @@ export class ConsumerRegisterComponent {
     email: '',
     password: ''
   };
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   registerConsumer() {
     this.http.post<any>('http://localhost:8080/registerServiceConsumer', this.consumer)
       .subscribe({
         next: (response) => {
           console.log('Consumer registered successfully:', response);
+          this.router.navigate(['/login/consumer']);
           // Handle success: show success message, redirect, etc.
         },
         error: (error) => {

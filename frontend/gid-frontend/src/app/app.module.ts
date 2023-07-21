@@ -10,6 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { ConsumerLoginComponent } from './consumer-login/consumer-login.component';
 import { ProviderRegisterComponent } from './provider-register/provider-register.component';
 import { ProviderLoginComponent } from './provider-login/provider-login.component';
+import { PostServiceComponent } from './post-service/post-service.component';
+import { ServiceListComponent } from './service-list/service-list.component';
+import { ServiceDetailComponent } from './service-detail/service-detail.component';
 
 
 @NgModule({
@@ -19,7 +22,10 @@ import { ProviderLoginComponent } from './provider-login/provider-login.componen
     HomeComponent,
     ConsumerLoginComponent,
     ProviderRegisterComponent,
-    ProviderLoginComponent
+    ProviderLoginComponent,
+    PostServiceComponent,
+    ServiceListComponent,
+    ServiceDetailComponent
   ],
   imports: [
     BrowserModule,
