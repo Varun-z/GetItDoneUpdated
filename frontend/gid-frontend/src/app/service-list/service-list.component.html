@@ -1,10 +1,20 @@
 <h2>Service List</h2>
+
+<!-- Search bar -->
+<button (click)="goToOrderHistory()">View Order History</button>
+
+<div>
+  <input type="text" [(ngModel)]="searchZipCode" placeholder="Enter Zip Code">
+  <button (click)="onSearchByZipCode()">Search</button>
+</div>
+
 <ul>
   <li *ngFor="let service of services">
     <a (click)="onSelectService(service.id)">
       {{ service.title }}
-    </a>
-    <p>Description: {{ service.serviceProvider.name }}</p>
+    <p>by {{ service.serviceProvider.name }}</p>
+    <p>Price: {{ service.price }}</p>
+    <p>Description: {{ service.description}}</p>
+  </a>
   </li>
 </ul>
-

@@ -17,6 +17,10 @@ public class Services {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String title;
+    @Column(name = "zipCode")
+    private int zipCode;
+    private int price;
+    private String description;
     @ManyToOne
     private ServiceProvider serviceProvider;
 

@@ -13,6 +13,7 @@ import { ProviderLoginComponent } from './provider-login/provider-login.componen
 import { PostServiceComponent } from './post-service/post-service.component';
 import { ServiceListComponent } from './service-list/service-list.component';
 import { ServiceDetailComponent } from './service-detail/service-detail.component';
+import { OrderHistoryComponent } from './order-history/order-history.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ServiceDetailComponent } from './service-detail/service-detail.componen
     ProviderLoginComponent,
     PostServiceComponent,
     ServiceListComponent,
-    ServiceDetailComponent
+    ServiceDetailComponent,
+    OrderHistoryComponent
   ],
   imports: [
     BrowserModule,

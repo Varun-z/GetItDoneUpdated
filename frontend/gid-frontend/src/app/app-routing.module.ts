@@ -8,6 +8,7 @@ import { ProviderLoginComponent } from './provider-login/provider-login.componen
 import { PostServiceComponent } from './post-service/post-service.component';
 import { ServiceListComponent } from './service-list/service-list.component';
 import { ServiceDetailComponent } from './service-detail/service-detail.component';
+import { OrderHistoryComponent } from './order-history/order-history.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'post-service/:SPid', component: PostServiceComponent },
   { path: 'service-list', component: ServiceListComponent },
   { path: ':SCid/selectService/:serviceId', component: ServiceDetailComponent },
+  { path: 'order-history', component: OrderHistoryComponent },
 ];
 
 @NgModule({

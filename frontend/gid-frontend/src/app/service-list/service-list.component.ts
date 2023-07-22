@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ScIdService } from '../sc-id.service.service';
+import { LoggedInServiceProviderService } from '../logged-in-service-provider-service.service';
 
 @Component({
   selector: 'app-service-list',
@@ -10,13 +11,16 @@ import { ScIdService } from '../sc-id.service.service';
 })
 export class ServiceListComponent implements OnInit {
   services: any[] = [];
+  filteredServices: any[] = [];
   serviceId: string | null | undefined;
   scId: string | null | undefined;
+  searchZipCode: string = '';
 
   constructor(private http: HttpClient,
     private router: Router,
     private route: ActivatedRoute,
-    private scIdService: ScIdService) { }
+    private scIdService: ScIdService,
+    ) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -28,10 +32,17 @@ export class ServiceListComponent implements OnInit {
   }
 
   fetchAllServices() {
-    this.http.get<any[]>('http://localhost:8080/') // Endpoint to fetch all services from the backend
+    let apiUrl = 'http://localhost:8080/';
+    if (this.searchZipCode) {
+      apiUrl = `http://localhost:8080/fetchServiceByZipcode/${this.searchZipCode}`;
+    }
+    this.http.get<any[]>(apiUrl)
       .subscribe({
         next: (services) => {
           this.services = services;
+          this.filteredServices = this.searchZipCode
+            ? services.filter(service => service.zipCode === parseInt(this.searchZipCode, 10))
+            : services;
           console.log(this.services);
         },
         error: (error) => {
@@ -40,18 +51,18 @@ export class ServiceListComponent implements OnInit {
         }
       });
   }
+  onSearchByZipCode() {
+    // Trigger search when the Search button is clicked
+    this.fetchAllServices();
+  }
   onSelectService(serviceId: string) {
-    // Get the consumer ID from localStorage
    
-    // Redirect to the selected service details page with the SCid and serviceId as route parameters
-    // this.router.navigate([`${this.scId}/selectService/${serviceId}`]);
     console.log(this.scId);
     if (!this.scId) {
       console.error('Service consumer ID not available.');
       return;
     }
 
-    // Send a GET request to the backend API endpoint to select the service
     const apiUrl = `http://localhost:8080/${this.scId}/selectService/${serviceId}`;
     this.http.get<any>(apiUrl)
       .subscribe({
@@ -65,6 +76,9 @@ export class ServiceListComponent implements OnInit {
           // Handle error: show error message, etc.
         }
       });
+  }
+  goToOrderHistory() {
+    this.router.navigate(['/order-history']);
   }
   }
 

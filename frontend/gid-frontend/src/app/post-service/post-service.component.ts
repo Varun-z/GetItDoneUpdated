@@ -10,7 +10,10 @@ import { LoggedInServiceProviderService } from '../logged-in-service-provider-se
 })
 export class PostServiceComponent implements OnInit {
   service = {
-    title: ''
+    title: '',
+    zipCode: '',
+    price: '',
+    description: ''
   };
   loggedInServiceProviderId: string | null = null;
 

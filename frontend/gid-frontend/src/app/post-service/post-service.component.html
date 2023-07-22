@@ -4,6 +4,12 @@
   <div>
     <label for="title">Title</label>
     <input type="text" id="title" name="title" [(ngModel)]="service.title" required>
+    <label for="zipCode">Zipcode</label>
+    <input type="number" id="zipCode" name="zipCode" [(ngModel)]="service.zipCode" required>
+    <label for="price">Price</label>
+    <input type="number" id="price" name="price" [(ngModel)]="service.price" required>
+    <label for="description">Description</label>
+    <input type="text" id="description" name="description" [(ngModel)]="service.description" required>
   </div>
 
   <button type="submit">Post Service</button>
