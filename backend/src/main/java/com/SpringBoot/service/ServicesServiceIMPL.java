@@ -35,4 +35,9 @@ public class ServicesServiceIMPL implements ServicesService{
     public Services getServiceById(int id) {
         return servicesRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public List<Services> findServicesByZipCode(Integer zipCode) {
+        return servicesRepository.findByZipCode(zipCode);
+    }
 }

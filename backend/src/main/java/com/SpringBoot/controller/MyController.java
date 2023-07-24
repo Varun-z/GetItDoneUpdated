@@ -8,6 +8,7 @@ import com.SpringBoot.service.ServiceConsumerService;
 import com.SpringBoot.service.ServiceProviderService;
 import com.SpringBoot.service.ServicesService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -57,5 +58,18 @@ public class MyController {
     @GetMapping("fetchServiceConsumer/{SCid}")
     public ServiceConsumer getConsumer(@PathVariable("SCid") int id) {
         return serviceConsumerService.getServiceConsumer(id);
+    }
+    @GetMapping("/fetchServiceByZipcode/{zipCode}")
+    public List<Services> findServiceByZipcode(@PathVariable("zipCode") Integer zipCode) {
+        return servicesService.findServicesByZipCode(zipCode);
+    }
+    @GetMapping("/{serviceId}")
+    public ResponseEntity<Services> getServiceById(@PathVariable("serviceId") int serviceId) {
+        Services service = servicesService.getServiceById(serviceId);
+        if (service != null) {
+            return ResponseEntity.ok(service);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 }

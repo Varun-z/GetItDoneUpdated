@@ -2,29 +2,107 @@
 
 /* Reset the default list style */
 ul {
-    list-style: none;
-    padding: 0;
-    
-  }
-  
-  /* Style each service item as a button */
-  li {
-    display: inline-block;
-    margin: 5px;
-    padding: 10px 15px;
-    border: 1px solid #141313;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Change the background color on hover */
-  li:hover {
-    background-color: #2fdb3b;
-  }
-  
-  /* If you want to remove underlines from the links */
-  li a {
-    text-decoration: none;
-  }
-  
+  list-style: none;
+  padding: 0;
+}
+
+/* Style each service item as a card */
+li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Align both horizontally and vertically */
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #141313;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Change the background color on hover */
+li:hover {
+  background-color: #9055ff;
+  color: #fff;
+}
+
+/* If you want to remove underlines from the links */
+li a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Align both horizontally and vertically */
+}
+
+/* Style for the service title */
+li h3 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+/* Style for the service provider name */
+li p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* Style for the search bar container */
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Style for the search input */
+.search-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Style for the search button */
+.search-button {
+  background-color: #9055ff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+.order-history-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.order-history-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.order-history-button:active {
+  background-color: #003d80;
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.order-history-button:focus {
+  outline: none;
+}

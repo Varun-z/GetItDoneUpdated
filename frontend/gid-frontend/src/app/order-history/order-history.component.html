@@ -1,0 +1,12 @@
+<div class="order-history-container">
+  <h2>Order History</h2>
+
+  <ul class="order-history-list">
+    <li *ngFor="let service of orderedServices" class="order-history-item">
+      <h3>{{ service.title }}</h3>
+      <p>Price: {{ service.price }}</p>
+      <p>Description: {{ service.description }}</p>
+      <!-- Add other service details here -->
+    </li>
+  </ul>
+</div>

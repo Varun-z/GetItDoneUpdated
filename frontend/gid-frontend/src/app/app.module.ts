@@ -13,6 +13,15 @@ import { ProviderLoginComponent } from './provider-login/provider-login.componen
 import { PostServiceComponent } from './post-service/post-service.component';
 import { ServiceListComponent } from './service-list/service-list.component';
 import { ServiceDetailComponent } from './service-detail/service-detail.component';
+import { OrderHistoryComponent } from './order-history/order-history.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -25,13 +34,22 @@ import { ServiceDetailComponent } from './service-detail/service-detail.componen
     ProviderLoginComponent,
     PostServiceComponent,
     ServiceListComponent,
-    ServiceDetailComponent
+    ServiceDetailComponent,
+    OrderHistoryComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,11 +1,25 @@
-<h2>Post Service</h2>
+<app-navbar></app-navbar>
 
-<form (ngSubmit)="postService()">
-  <div>
-    <label for="title">Title</label>
-    <input type="text" id="title" name="title" [(ngModel)]="service.title" required>
-  </div>
+<div class="form-container">
+  <h2>Post Service</h2>
 
-  <button type="submit">Post Service</button>
-</form>
-
+  <form (ngSubmit)="postService()">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" id="title" name="title" [(ngModel)]="service.title" required>
+    </div>
+    <div class="form-group">
+      <label for="zipCode">Zipcode</label>
+      <input type="number" id="zipCode" name="zipCode" [(ngModel)]="service.zipCode" required>
+    </div>
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input type="number" id="price" name="price" [(ngModel)]="service.price" required>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" name="description" [(ngModel)]="service.description" rows="4" required></textarea>
+    </div>
+    <button type="submit" class="btn-post-service">Post Service</button>
+  </form>
+</div>

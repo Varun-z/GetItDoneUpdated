@@ -11,12 +11,16 @@ import java.util.UUID;
 @Entity(name="Services")
 @Data
 @Embeddable
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Services {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String title;
+    @Column(name = "zipCode")
+    private int zipCode;
+    private int price;
+    private String description;
     @ManyToOne
     private ServiceProvider serviceProvider;
 

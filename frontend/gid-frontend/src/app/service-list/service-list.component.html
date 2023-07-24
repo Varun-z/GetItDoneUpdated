@@ -1,10 +1,26 @@
-<h2>Service List</h2>
-<ul>
-  <li *ngFor="let service of services">
-    <a (click)="onSelectService(service.id)">
-      {{ service.title }}
-    </a>
-    <p>Description: {{ service.serviceProvider.name }}</p>
-  </li>
-</ul>
+<!-- Add the navbar component -->
+<app-navbar></app-navbar>
 
+<div class="service-list-container">
+  <h2>Service List</h2>
+
+  <!-- View Order History button -->
+  <button class="order-history-button" (click)="goToOrderHistory()">View Order History</button>
+
+  <!-- Search bar -->
+  <div class="search-container">
+    <input type="text" [(ngModel)]="searchZipCode" placeholder="Enter Zip Code" class="search-input">
+    <button (click)="onSearchByZipCode()" class="search-button">Search</button>
+  </div>
+
+  <ul>
+    <li *ngFor="let service of services">
+      <a (click)="onSelectService(service.id)">
+        <h3>{{ service.title }}</h3>
+        <p>by {{ service.serviceProvider.name }}</p>
+        <p>Price: {{ service.price }}</p>
+        <p>Description: {{ service.description }}</p>
+      </a>
+    </li>
+  </ul>
+</div>

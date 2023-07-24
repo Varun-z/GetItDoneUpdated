@@ -1,22 +1,28 @@
+<app-navbar></app-navbar>
+
 <h2>Register as Provider</h2>
 
 <form (ngSubmit)="registerProvider()">
   <div>
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" [(ngModel)]="provider.name" required>
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput type="text" id="name" name="name" [(ngModel)]="provider.name" required>
+    </mat-form-field>
   </div>
 
   <div>
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" [(ngModel)]="provider.email" required>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput type="email" id="email" name="email" [(ngModel)]="provider.email" required>
+    </mat-form-field>
   </div>
 
   <div>
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" [(ngModel)]="provider.password" required>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput type="password" id="password" name="password" [(ngModel)]="provider.password" required>
+    </mat-form-field>
   </div>
 
-  <button type="submit">Register</button>
-
+  <button mat-raised-button type="submit">Register</button>
 </form>
-
