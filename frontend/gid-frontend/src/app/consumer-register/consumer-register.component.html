@@ -1,22 +1,30 @@
-<div class="consumer-form-container">
+<app-navbar></app-navbar>
+
+<div class="form-container">
   <h2>Register as Consumer</h2>
 
   <form (ngSubmit)="registerConsumer()">
     <div>
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" [(ngModel)]="consumer.name" required>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput type="text" id="name" name="name" [(ngModel)]="consumer.name" required>
+      </mat-form-field>
     </div>
 
     <div>
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" [(ngModel)]="consumer.email" required>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="email" id="email" name="email" [(ngModel)]="consumer.email" required>
+      </mat-form-field>
     </div>
 
     <div>
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" [(ngModel)]="consumer.password" required>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" id="password" name="password" [(ngModel)]="consumer.password" required>
+      </mat-form-field>
     </div>
 
-    <button type="submit">Register</button>
+    <button mat-raised-button type="submit">Register</button>
   </form>
 </div>

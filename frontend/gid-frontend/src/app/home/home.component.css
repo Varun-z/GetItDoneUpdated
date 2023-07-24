@@ -1,73 +1,145 @@
-/* Basic styling for the navigation bar */
-.navbar {
-    background-color: #333;
-    color: white;
-    display: flex;
-    justify-content: space-between; /* Distribute elements to the sides */
-    align-items: center;
-    padding: 10px;
-    font-family: Arial, sans-serif;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Styling for the "Welcome to our website" heading */
-  .navbar h2 {
-    margin: 0;
-    font-size: 20px;
-  }
-  
-  /* Styling for the dropdown buttons */
-  .dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .dropbtn:hover {
-    background-color: #45a049;
-  }
-  
-  /* Styling for the dropdown content */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    z-index: 1;
-  }
-  
-  /* Styling for the links inside the dropdown */
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    transition: background-color 0.3s ease;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #f1f1f1;
-  }
-  
-  /* Show the dropdown content when the user clicks on the dropdown button */
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
-  /* Positioning the login dropdown on the right */
-  .dropdown:last-child {
-    position: relative;
-  }
-  
-  /* Positioning the login dropdown content to the right */
-  .dropdown:last-child .dropdown-content {
-    right: 0;
-  }
-  
+/* Restyled navbar with Angular Material */
+.logo-button {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin-right: 10px; /* Add a bit of spacing to separate the logo from other elements */
+  position: relative; /* To create a stacking context for the ::before pseudo-element */
+}
+
+.logo-button:hover {
+  text-decoration: none; /* Remove underline on hover */
+  transform: scale(1.1); /* Scale the logo slightly on hover */
+}
+
+/* Make the "GID" logo stand out more */
+.logo-button:before {
+  content: "GID";
+  background: linear-gradient(to right, #2c3e50, #1abc9c, #3498db, #9b59b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Add a subtle shadow to the logo */
+.logo-button:before {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+mat-toolbar {
+  background: linear-gradient(to right, #2c3e50, #1abc9c, #3498db, #9b59b6);
+  color: white;
+  justify-content: space-between;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease-in-out;
+}
+
+
+
+.navbar-buttons {
+  display: flex;
+  align-items: center;
+}
+
+/* Styling for the dropdown menus */
+.dropdown {
+  margin-right: 20px;
+}
+
+.dropbtn {
+  background-color: #3498db;
+  color: white;
+}
+
+.dropbtn:hover {
+  background-color: #2980b9;
+}
+
+/* Styling for sections with improved gradients */
+section {
+  padding: 30px;
+  text-align: center;
+  background: linear-gradient(to bottom right, #f2f2f2, #e6e6e6);
+  color: #333333;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+section:hover {
+  transform: scale(1.02);
+}
+
+section h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+section p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Styling for the authentication buttons in the sections */
+.welcome-section .welcome-auth-buttons,
+.about-section .auth-btn,
+.contact-section .auth-btn {
+  margin-top: 20px;
+}
+
+/* Styling for the dropdown menus */
+.mat-menu-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-menu-item {
+  width: 100%;
+  text-align: center;
+}
+
+/* Styling for the How It Works sections */
+.how-it-works-section {
+  margin-top: 40px;
+}
+
+.how-it-works-section h2 {
+  font-size: 24px;
+}
+
+.how-it-works-section p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Styling for the separate sections for consumers and providers */
+.how-it-works-section.consumers {
+  background: linear-gradient(to bottom right, #f2f2f2, #e6e6e6);
+  color: #333333;
+}
+
+.how-it-works-section.providers {
+  background: linear-gradient(to bottom right, #e2e2e2, #d6d6d6);
+  color: #333333;
+}
+
+/* Styling for the Contact section */
+.contact-section {
+  background: linear-gradient(to bottom right, #e6e6e6, #d2d2d2);
+  color: #333333;
+}
+
+/* Styling for the bullet points */
+.bullet-list {
+  list-style-type: disc;
+  text-align: left;
+  margin-left: 30px;
+}
+
+.bullet-list li {
+  margin-bottom: 10px;
+}

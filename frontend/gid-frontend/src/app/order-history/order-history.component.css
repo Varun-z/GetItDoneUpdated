@@ -1,0 +1,61 @@
+/* Add this CSS to your styles.css or styles.scss file */
+
+/* Style for the "Order History" container */
+.order-history-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Style for the "Order History" heading */
+  .order-history-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Style for the list of ordered services */
+  .order-history-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* Style for each ordered service item */
+  .order-history-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .order-history-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Style for the service title */
+  .order-history-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #007bff;
+  }
+  
+  /* Style for the service price */
+  .order-history-item p {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  /* Style for the service description */
+  .order-history-item p:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Add a separator between each service item */
+  .order-history-list li:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+  }
+  
