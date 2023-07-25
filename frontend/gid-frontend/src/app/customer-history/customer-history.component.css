@@ -1,0 +1,57 @@
+/* Style for the "Customer History" container */
+.customer-history-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Style for the "Customer History" heading */
+  .customer-history-container h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Style for the list of service consumers */
+  .customer-history-container ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* Style for each service consumer item */
+  .customer-history-container li {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .customer-history-container li:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Style for the consumer name */
+  .customer-history-container li {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #007bff;
+    text-align: center; /* Center the name */
+  }
+  
+  /* Style for the consumer email */
+  .customer-history-container li {
+    font-size: 18px;
+    margin-bottom: 5px;
+    text-align: center; /* Center the email */
+    color: #555; /* Add a darker color for the email */
+  }
+  
+  /* Add a separator between each consumer item */
+  .customer-history-container li:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+  }
+  

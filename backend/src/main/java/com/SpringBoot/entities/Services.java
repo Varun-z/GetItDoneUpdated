@@ -1,6 +1,7 @@
 package com.SpringBoot.entities;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -22,8 +23,10 @@ public class Services {
     private int price;
     private String description;
     @ManyToOne
+//    @JsonIgnore
     private ServiceProvider serviceProvider;
 
     @ManyToMany(mappedBy = "servicesList")
+    @JsonIgnore
     private List<ServiceConsumer> serviceConsumerList;
 }

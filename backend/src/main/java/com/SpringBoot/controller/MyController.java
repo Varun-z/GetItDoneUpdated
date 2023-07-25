@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -71,5 +72,28 @@ public class MyController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+    @GetMapping("/serviceProvider/{providerId}/serviceConsumers")
+    public List<ServiceConsumerDTO> getServiceConsumersByProviderId(@PathVariable int providerId) {
+        ServiceProvider serviceProvider = serviceProviderService.findRecruiter(providerId);
+        if (serviceProvider == null) {
+            // Handle the case where the service provider is not found
+            return new ArrayList<>();
+        }
+
+        List<ServiceConsumerDTO> serviceConsumerDTOs = new ArrayList<>();
+        for (Services service : serviceProvider.getServicesList()) {
+            for (ServiceConsumer serviceConsumer : service.getServiceConsumerList()) {
+                ServiceConsumerDTO dto = new ServiceConsumerDTO();
+                dto.setName(serviceConsumer.getName());
+                dto.setEmail(serviceConsumer.getEmail());
+                dto.setServiceTitle(service.getTitle());
+                dto.setServiceDescription(service.getDescription());
+
+                serviceConsumerDTOs.add(dto);
+            }
+        }
+
+        return serviceConsumerDTOs;
     }
 }

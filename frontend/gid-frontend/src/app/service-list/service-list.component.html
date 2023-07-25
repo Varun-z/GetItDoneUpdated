@@ -1,5 +1,10 @@
 <!-- Add the navbar component -->
-<app-navbar></app-navbar>
+<mat-toolbar color="primary">
+  <a routerLink='' class="logo-button">
+    <span class="logo">GID</span>
+  </a>
+  <button mat-raised-button class="btn-logout" (click)="logout()">Logout</button>
+</mat-toolbar>
 
 <div class="service-list-container">
   <h2>Service List</h2>

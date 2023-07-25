@@ -8,7 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
+
 @Service
 public class ServiceProviderServiceIMPL implements ServiceProviderService{
 
@@ -39,6 +42,16 @@ public class ServiceProviderServiceIMPL implements ServiceProviderService{
         }
 
         return obj;
+    }
+    @Override
+    public List<ServiceConsumer> getServiceConsumersByProviderId(int providerId) {
+        ServiceProvider serviceProvider = serviceProviderRepository.findById(providerId).orElse(null);
+        if (serviceProvider != null) {
+            return serviceProvider.getServicesList().stream()
+                    .flatMap(service -> service.getServiceConsumerList().stream())
+                    .collect(Collectors.toList());
+        }
+        return null;
     }
     }
 

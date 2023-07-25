@@ -1,5 +1,53 @@
-/* Add this CSS to your styles.css or styles.scss file */
+.logo-button {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin-right: 10px; /* Add a bit of spacing to separate the logo from other elements */
+  position: relative; /* To create a stacking context for the ::before pseudo-element */
+}
 
+/* Make the "GID" logo stand out more */
+.logo-button:before {
+  content: "GID";
+  background: linear-gradient(to right, #2c3e50, #1abc9c, #3498db, #9b59b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Add a subtle shadow to the logo */
+.logo-button:before {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+mat-toolbar {
+  background: linear-gradient(to right, #2c3e50, #1abc9c, #3498db, #9b59b6);
+  color: white;
+  justify-content: space-between;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease-in-out;
+}
+.dropdown {
+  margin-right: 20px;
+}
+
+.dropbtn {
+  background-color: #3498db;
+  color: white;
+}
+
+.dropbtn:hover {
+  background-color: #2980b9;
+}
+.navbar-buttons {
+  display: flex;
+  align-items: center; /* Align the buttons vertically within the div */
+}
 /* Reset the default list style */
 ul {
   list-style: none;
@@ -11,7 +59,7 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Align both horizontally and vertically */
+  justify-content: center;
   margin: 10px;
   padding: 20px;
   border: 1px solid #141313;
@@ -20,9 +68,10 @@ li {
   transition: background-color 0.3s ease;
 }
 
-/* Change the background color on hover */
+/* Change the background color and add a gradient on hover */
 li:hover {
   background-color: #9055ff;
+  background-image: linear-gradient(to bottom right, #9055ff, #6c37bf);
   color: #fff;
 }
 
@@ -32,19 +81,39 @@ li a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Align both horizontally and vertically */
+  justify-content: center;
 }
 
 /* Style for the service title */
 li h3 {
-  font-size: 20px;
+  font-size: 22px;
   margin: 10px 0;
+  font-weight: bold;
+  color: #000; /* Black color for the title */
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); /* Add a subtle text shadow */
 }
 
 /* Style for the service provider name */
 li p {
   font-size: 16px;
   margin: 5px 0;
+  color: #333; /* Dark gray color for the name */
+}
+
+/* Style for the service price */
+li p.price {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px 0;
+  color: #ffcc00; /* Yellow color for the price */
+}
+
+/* Style for the service description */
+li p.description {
+  font-size: 14px;
+  margin: 5px 0;
+  color: #666; /* Medium gray color for the description */
+  line-height: 1.3;
 }
 
 /* Style for the search bar container */
@@ -65,8 +134,8 @@ li p {
 
 /* Style for the search button */
 .search-button {
-  background-color: #9055ff;
-  color: #fff;
+  background-color: #ffcc00; /* Yellow color for the search button */
+  color: #000; /* Black color for the search button text */
   padding: 10px 20px;
   border: none;
   border-radius: 6px;
@@ -74,13 +143,17 @@ li p {
   font-size: 18px;
   margin-left: 10px;
   transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .search-button:hover {
-  background-color: #0056b3;
+  background-color: #ffa500; /* Orange color on hover */
+  transform: scale(1.05); /* Add a slight scale effect on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 .order-history-button {
-  background-color: #007bff;
+  background-color: #007bff; /* Blue color for the order history button */
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -92,13 +165,13 @@ li p {
 }
 
 .order-history-button:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Darker blue color on hover */
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .order-history-button:active {
-  background-color: #003d80;
+  background-color: #003d80; /* Even darker blue color on active */
   transform: translateY(0);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }

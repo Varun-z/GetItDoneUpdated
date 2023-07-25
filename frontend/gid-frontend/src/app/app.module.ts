@@ -22,6 +22,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { NavbarComponent } from './navbar/navbar.component';
+import { CustomerHistoryComponent } from './customer-history/customer-history.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     ServiceListComponent,
     ServiceDetailComponent,
     OrderHistoryComponent,
-    NavbarComponent
+    NavbarComponent,
+    CustomerHistoryComponent
   ],
   imports: [
     BrowserModule,

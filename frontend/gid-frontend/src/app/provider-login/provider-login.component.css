@@ -1,4 +1,54 @@
 /* Basic styling for the login form container */
+.logo-button {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin-right: 10px; /* Add a bit of spacing to separate the logo from other elements */
+  position: relative; /* To create a stacking context for the ::before pseudo-element */
+}
+
+/* Make the "GID" logo stand out more */
+.logo-button:before {
+  content: "GID";
+  background: linear-gradient(to right, #2c3e50, #1abc9c, #3498db, #9b59b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Add a subtle shadow to the logo */
+.logo-button:before {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+mat-toolbar {
+  background: linear-gradient(to right, #2c3e50, #1abc9c, #3498db, #9b59b6);
+  color: white;
+  justify-content: space-between;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease-in-out;
+}
+.dropdown {
+  margin-right: 20px;
+}
+
+.dropbtn {
+  background-color: #3498db;
+  color: white;
+}
+
+.dropbtn:hover {
+  background-color: #2980b9;
+}
+.navbar-buttons {
+  display: flex;
+  align-items: center; /* Align the buttons vertically within the div */
+}
 .form-container {
   max-width: 400px;
   margin: 0 auto;
