@@ -80,5 +80,9 @@ export class ServiceListComponent implements OnInit {
   goToOrderHistory() {
     this.router.navigate(['/order-history']);
   }
+  
+  logout() {
+    this.router.navigate(['login/consumer']); // Redirect to the homepage
   }
+}
 

@@ -1,0 +1,14 @@
+<div class="customer-history-container">
+    <h3>Customer History</h3>
+    <p>Below is a list of customers who have used our services:</p>
+  
+    <ul class="customer-history-list">
+      <li *ngFor="let consumer of serviceConsumers" class="customer-history-item">
+        <!-- <h4>{{ consumer.name }}</h4> -->
+        <p><strong>Name:</strong> {{ consumer.name }}</p>
+        <p><strong>Email:</strong> {{ consumer.email }}</p>
+        <p><strong>Service Used:</strong> {{ consumer.serviceTitle }}</p>
+      </li>
+    </ul>
+  </div>
+  

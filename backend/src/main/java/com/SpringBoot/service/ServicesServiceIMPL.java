@@ -1,13 +1,11 @@
 package com.SpringBoot.service;
 
-import com.SpringBoot.DAO.ServiceProviderRepository;
 import com.SpringBoot.DAO.ServicesRepository;
 import com.SpringBoot.entities.Services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
 
 @Service
 public class ServicesServiceIMPL implements ServicesService{
@@ -23,11 +21,11 @@ public class ServicesServiceIMPL implements ServicesService{
 
     @Override
     public Services saveService(int id, Services services) {
-        services.setServiceProvider(serviceProviderService.findRecruiter(id));
+        services.setServiceProvider(serviceProviderService.findProvider(id));
         Services obj = servicesRepository.save(services);
-        List<Services> tempJobList = serviceProviderService.findRecruiter(id).getServicesList();
-        tempJobList.add(obj);
-        serviceProviderService.findRecruiter(id).setServicesList(tempJobList);
+        List<Services> tempServiceList = serviceProviderService.findProvider(id).getServicesList();
+        tempServiceList.add(obj);
+        serviceProviderService.findProvider(id).setServicesList(tempServiceList);
         return obj;
     }
 

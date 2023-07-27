@@ -48,4 +48,11 @@ export class PostServiceComponent implements OnInit {
         }
       });
   }
+  viewCustomerHistory() {
+    // Redirect to the customer history component route when the button is clicked
+    this.router.navigate(['/customer-history']);
+  }
+  logout() {
+    this.router.navigate(['login/provider']); // Redirect to the homepage
+  }
 }

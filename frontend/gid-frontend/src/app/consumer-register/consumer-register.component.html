@@ -1,6 +1,19 @@
-<app-navbar></app-navbar>
-
+<mat-toolbar color="primary">
+  <a routerLink='' class="logo-button">
+    <span class="logo">GID</span>
+  </a>
+  <div class="navbar-buttons">
+    <div class="dropdown">
+      <button mat-raised-button class="dropbtn" [matMenuTriggerFor]="loginMenu">Login</button>
+      <mat-menu #loginMenu="matMenu">
+        <button mat-menu-item routerLink="/login/consumer">Consumer</button>
+        <button mat-menu-item routerLink="/login/provider">Service Provider</button>
+      </mat-menu>
+    </div>
+  </div>
+</mat-toolbar>
 <div class="form-container">
+
   <h2>Register as Consumer</h2>
 
   <form (ngSubmit)="registerConsumer()">

@@ -52,7 +52,7 @@ public class ServiceConsumerServiceIMPL implements ServiceConsumerService{
 //        ServiceConsumer tempServiceConsumer = getServiceConsumer(scId);
 //        if(servicesService.getServiceById(id).getServiceConsumerList() == null) {
 //            servicesService.getServiceById(id).setServiceConsumerList(new ArrayList<ServiceConsumer>());
-//            System.out.println("working");
+//            System.out.println("working");electServic
 //        }
 //        List<ServiceConsumer> tempServiceConsumerList = servicesService.getServiceById(id).getServiceConsumerList();
 //        tempServiceConsumerList.add(tempServiceConsumer);

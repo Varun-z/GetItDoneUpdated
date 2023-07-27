@@ -1,4 +1,12 @@
-<app-navbar></app-navbar>
+<mat-toolbar color="primary">
+  <a routerLink='' class="logo-button">
+    <span class="logo">GID</span>
+  </a>
+  <div class="button-container">
+    <button mat-raised-button class="btn-view-history" (click)="viewCustomerHistory()">View Customer History</button>
+  <button mat-raised-button class="btn-logout" (click)="logout()">Logout</button>
+</div>
+</mat-toolbar>
 
 <div class="form-container">
   <h2>Post Service</h2>
@@ -21,5 +29,6 @@
       <textarea id="description" name="description" [(ngModel)]="service.description" rows="4" required></textarea>
     </div>
     <button type="submit" class="btn-post-service">Post Service</button>
+    
   </form>
 </div>
