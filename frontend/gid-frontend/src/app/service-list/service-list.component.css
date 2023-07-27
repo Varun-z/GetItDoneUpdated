@@ -152,30 +152,13 @@ li p.description {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.order-history-button {
-  background-color: #007bff; /* Blue color for the order history button */
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 18px;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+.button-container {
+  display: flex; /* Ensure the buttons are in a flex container */
+  align-items: center; /* Align the buttons vertically within the container */
+  gap: 10px; /* Set the desired spacing between the buttons */
 }
 
-.order-history-button:hover {
-  background-color: #0056b3; /* Darker blue color on hover */
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.order-history-button:active {
-  background-color: #003d80; /* Even darker blue color on active */
-  transform: translateY(0);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.order-history-button:focus {
-  outline: none;
+/* If you want to remove the default spacing between the buttons */
+.button-container button {
+  margin: 0; /* Remove the default margin of the buttons */
 }

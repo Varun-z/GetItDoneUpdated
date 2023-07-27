@@ -3,14 +3,18 @@
   <a routerLink='' class="logo-button">
     <span class="logo">GID</span>
   </a>
-  <button mat-raised-button class="btn-logout" (click)="logout()">Logout</button>
+  <div class="button-container">
+    <button mat-raised-button class="order-history-button" (click)="goToOrderHistory()">View Order History</button>
+    <button mat-raised-button class="btn-logout" (click)="logout()">Logout</button>
+  </div>
+  
 </mat-toolbar>
 
 <div class="service-list-container">
   <h2>Service List</h2>
 
   <!-- View Order History button -->
-  <button class="order-history-button" (click)="goToOrderHistory()">View Order History</button>
+  
 
   <!-- Search bar -->
   <div class="search-container">

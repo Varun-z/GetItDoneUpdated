@@ -110,3 +110,12 @@ h2 {
 .btn-post-service:hover {
   background-color: #0056b3;
 }
+
+.button-container {
+  display: flex; /* Ensure the buttons are in a flex container */
+  align-items: center; /* Align the buttons vertically within the container */
+  gap: 10px; /* Set the desired spacing between the buttons */
+}
+.button-container button {
+  margin: 0; /* Remove the default margin of the buttons */
+}
