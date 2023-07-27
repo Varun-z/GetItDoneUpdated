@@ -18,7 +18,7 @@ public class ServiceProviderServiceIMPL implements ServiceProviderService{
     @Autowired
     ServiceProviderRepository serviceProviderRepository;
     @Override
-    public ServiceProvider findRecruiter(int id) {
+    public ServiceProvider findProvider(int id) {
         return serviceProviderRepository.findById(id).orElse(null);
     }
 

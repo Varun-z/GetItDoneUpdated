@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -75,7 +74,7 @@ public class MyController {
     }
     @GetMapping("/serviceProvider/{providerId}/serviceConsumers")
     public List<ServiceConsumerDTO> getServiceConsumersByProviderId(@PathVariable int providerId) {
-        ServiceProvider serviceProvider = serviceProviderService.findRecruiter(providerId);
+        ServiceProvider serviceProvider = serviceProviderService.findProvider(providerId);
         if (serviceProvider == null) {
             // Handle the case where the service provider is not found
             return new ArrayList<>();
